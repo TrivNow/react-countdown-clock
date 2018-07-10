@@ -1,7 +1,6 @@
 React  = require 'react'
 PropTypes = require 'prop-types'
 CreateReactClass = require 'create-react-class'
-window = window || {}
 
 ReactCountdownClock = CreateReactClass
   _seconds: 0
@@ -10,7 +9,7 @@ ReactCountdownClock = CreateReactClass
   _content: null
   _canvas: null
   _timeoutIds: []
-  _scale: (window && window.devicePixelRatio) || 1
+  _scale: 1
 
   displayName: 'ReactCountdownClock'
 
