@@ -1,6 +1,7 @@
 React  = require 'react'
 PropTypes = require 'prop-types'
 CreateReactClass = require 'create-react-class'
+window = window || {}
 
 ReactCountdownClock = CreateReactClass
   _seconds: 0
