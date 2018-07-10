@@ -9,7 +9,7 @@ ReactCountdownClock = CreateReactClass
   _content: null
   _canvas: null
   _timeoutIds: []
-  _scale: (window && window.devicePixelRatio) || 1
+  _scale: 1
 
   displayName: 'ReactCountdownClock'
 
@@ -28,6 +28,11 @@ ReactCountdownClock = CreateReactClass
       @_pauseTimer() if @props.paused
 
   componentDidMount: ->
+    if(window && window.devicePixelRatio)
+      @_scale = window.devicePixelRatio || 1
+    else
+      @_scale = 1
+
     @_seconds = @_startSeconds()
     @_setupTimer()
 
