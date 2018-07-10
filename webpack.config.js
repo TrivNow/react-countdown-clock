@@ -9,7 +9,8 @@ module.exports = {
     publicPath: path.join(__dirname, 'build'),
     filename: 'react-countdown-clock.js',
     library: 'ReactCountdownClock',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    globalObject: 'typeof self !== \'undefined\' ? self : this'
   },
   devtool: 'source-map',
   externals: {
@@ -21,8 +22,8 @@ module.exports = {
     }
   },
   module: {
-    rules: [{ 
-      test: /\.coffee$/, 
+    rules: [{
+      test: /\.coffee$/,
       use: [
         {
           loader: 'coffee-loader',
